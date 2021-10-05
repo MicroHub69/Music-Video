@@ -65,6 +65,7 @@ ANDROID UNDER 768PX SCREEN
 ========================= */
 @media(max-width:768px){
     #container{
+        height: 70vh;
         padding: 0 20px;
         background-image: url("../../images/charles-deluvio-9uS7yhHjSuY-unsplash.jpg");
     }
