@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: 'Noto Sans Display', sans-serif;
+}
+#container{
+    padding: 0 100px;
+    background-image: url("../../images/cameron-venti-lI7dlA5VBp8-unsplash.jpg");
+    height: 100vh;
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+}
+.clearfix{
+    clear: both;
+}
+
+#search-form{
+    display: block;
+    margin-bottom: 15px;
+}
+.fieldcontainer{
+    display: block;
+    position: relative;
+    margin: 0 auto;
+}
+.search-btn:hover{
+    filter: alpha(opacity=90);
+    opacity: 0.9;
+}
+
+.search-field{
+    box-sizing: border-box;
+    padding: 11px 8px;
+    padding-right: 43px;
+    width: 45%;
+    background: #fff;
+    color: #ccc;
+    font-size: 1.6em;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+}
+#search-btn{
+    position: absolute;
+    right: 35px;
+    top: 5px;
+    height: 32px;
+    cursor: pointer;
+    filter: alpha(opacity=65);
+    opacity: 0.65;
+    background: url(images/....) top left no-repeat;
+}
+#search-btn:hover{
+    filter: alpha(opacity=90);
+    opacity: 0.9;
+}
+
+
+
+/* =======================
+ANDROID UNDER 768PX SCREEN
+========================= */
+@media(max-width:768px){
+    #container{
+        padding: 0 20px;
+        background-image: url("../../images/charles-deluvio-9uS7yhHjSuY-unsplash.jpg");
+    }
+}
