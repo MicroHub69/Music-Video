@@ -7,12 +7,25 @@
     font-family: 'Noto Sans Display', sans-serif;
 }
 #container{
-    padding: 0 100px;
     background-image: url("../../images/cameron-venti-lI7dlA5VBp8-unsplash.jpg");
-    height: 100vh;
+    height: auto;
+    padding-bottom: 20px;
     object-fit: cover;
     background-position: center;
     background-size: cover;
+}
+
+header{
+    background-color: red;
+    height: auto;
+    padding-bottom: 20px;
+    padding: 10px 15px;
+}
+header h1{
+    
+}
+header p{
+    color: #fff;
 }
 .clearfix{
     clear: both;
@@ -34,28 +47,38 @@
 
 .search-field{
     box-sizing: border-box;
-    padding: 11px 8px;
-    padding-right: 43px;
-    width: 45%;
+    padding: 10px 15px;
+    width: 100%;
+    margin-top: 15px;
     background: #fff;
-    color: #ccc;
-    font-size: 1.6em;
-    border-radius: 2px;
-    border: 1px solid #ccc;
+    color: red;
+    font-size: 20px;
+    border-radius: 5px;
+    outline: 0;
+    padding-right: 50px;
+    border: 1px solid transparent;
 }
 #search-btn{
     position: absolute;
-    right: 35px;
-    top: 5px;
-    height: 32px;
-    cursor: pointer;
-    filter: alpha(opacity=65);
-    opacity: 0.65;
-    background: url(images/....) top left no-repeat;
+    background-color: red;
+    right: 7px;
+    width: 35px;
+    border: 0;
+    outline: 0;
+    height: 35px;
+    border-radius: 5px;
+    top: 22px;
 }
-#search-btn:hover{
-    filter: alpha(opacity=90);
-    opacity: 0.9;
+#search-btn .fa{
+    font-size: 20px;
+    color: #fff;
+}
+footer{
+    text-align: center;
+    background-color: #fff;
+    height: auto;
+    margin-top: 100px;
+    padding-bottom: 30px;
 }
 
 
@@ -65,8 +88,7 @@ ANDROID UNDER 768PX SCREEN
 ========================= */
 @media(max-width:768px){
     #container{
-        height: 70vh;
-        padding: 0 20px;
+        height: auto;
         background-image: url("../../images/charles-deluvio-9uS7yhHjSuY-unsplash.jpg");
     }
 }

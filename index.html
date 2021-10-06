@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youtube Search Engine</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
  rel="stylesheet">
@@ -17,16 +18,15 @@
         <header>
             <h1>Music <span>Video</span></h1>
             <p>Search any Music Video here</p>
-        </header>
 
-        <section>
             <form id="search-form" name="search-form" onsubmit="return search()">
                 <div class="fieldcontainer">
                     <input type="search" id="query" class="search-field" placeholder="type that video here">
-                    <input type="submit" name="submit-btn" id="search-btn" value="">
+                    <button type="submit" name="submit-btn" id="search-btn" value=""><i class="fa fa-search"></i></button>
                 </div>
             </form>
-        </section>
+        </header>
+
 
         <ul id="results"></ul>
 
