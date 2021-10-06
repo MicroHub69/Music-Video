@@ -39,8 +39,13 @@ function search(){
                     var output = getOutput(item);
 
                     //Display Results
-                    $("#results").append(output)
+                    $("#results").append(output);
                 })
+
+                var buttons = getButtons(prevPageToken, nextPageToken)
+
+                ///Display Buttons
+                $("#buttons").append(buttons);
             }
     )
 }
@@ -72,6 +77,17 @@ function getOutput(item){
     '<div class="clearfix"></div>' + '';
 
     return output;
+}
 
+function getButtons(prevPageToken, nextPageToken){
+    if(!prevPageToken){
+        var btnOutput = '<div class="button-container>"' +
+        '<button id="next-button" class="paging-button" data-token="'+nextPageToken+'" data-query="'q'"' + 
+        'onclick="nextPage();"> Next </button></div>';
+    } else{
+        var btnOutput = '<div class="button-container">' +
+        '<button id="next-button" class="paging-button" data-token="'+nextPageToken+'" data-query="'q'"' + 
+        'onclick="nextPage();"> Next </button></div>';
+    }
 }
 
