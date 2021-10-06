@@ -34,7 +34,7 @@ function search(){
                 //Log Data
                 console.log(data)
 
-                $(data.items, function(i, item){
+                $.each(data.items, function(i, item){
                     ///GET OUTPUT
                     var output = getOutput(item);
 
@@ -57,12 +57,21 @@ function getOutput(item){
 
     ///Build Output
     var output = '<li>' +
-    '<div class"list-left">' + 
-    '<img src"'+thumb+'">' +
+    '<div class="list-left">' + 
+    '<img src="'+thumb+'">' +
     '</div>' +
     
-    '<div class"list-right">' +
-    '<h3>'+title+'</h3>' 
-    '<h3>'+title+'</h3>'
+    '<div class="list-right">' +
+    '<h3>'+title+'</h3>' +
+    '<small>By <span class="cTitle">'+channelTitle+'</span> on '+videoDate+'</small>' +
+    '<p>'+description+'</p>' +
+    '</div>' +
+    '</li>' +
+
+
+    '<div class="clearfix"></div>' + '';
+
+    return output;
+
 }
 

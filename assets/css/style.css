@@ -7,7 +7,8 @@
     font-family: 'Noto Sans Display', sans-serif;
 }
 #container{
-    background-image: url("../../images/cameron-venti-lI7dlA5VBp8-unsplash.jpg");
+    background-color: #fff;
+    /* background-image: url("../../images/cameron-venti-lI7dlA5VBp8-unsplash.jpg"); */
     height: auto;
     padding-bottom: 20px;
     object-fit: cover;
@@ -73,6 +74,14 @@ header p{
     font-size: 20px;
     color: #fff;
 }
+
+.list-left{
+  
+}
+
+
+
+
 footer{
     text-align: center;
     background-color: #fff;
@@ -88,7 +97,8 @@ ANDROID UNDER 768PX SCREEN
 ========================= */
 @media(max-width:768px){
     #container{
+        background-color: #fff;
         height: auto;
-        background-image: url("../../images/charles-deluvio-9uS7yhHjSuY-unsplash.jpg");
+        /* background-image: url("../../images/charles-deluvio-9uS7yhHjSuY-unsplash.jpg"); */
     }
 }
