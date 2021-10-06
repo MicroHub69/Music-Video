@@ -50,6 +50,51 @@ function search(){
     )
 }
 
+function nextPage(){
+
+
+    var token = $("next-button").data('token');
+    var q = $("next-button").data('query')
+
+
+
+    $("#results").html("")
+    $("#buttons").html("")
+
+    ///GET FORM INPUTS
+    q = $("#query").val();
+
+    ////GET RUN REQUEST ON API
+    $.get(
+        "https://www.googleapis.com/youtube/v3/search",{
+            part: 'snippet, id',
+            q: q,
+            pageToken: token,
+            type: 'video',
+            key: "AIzaSyCWqsbZfTuSO4xxIhlOw0a8RM-s7Da6YIA"},
+            function(data){
+                var nextPageToken = data.nextPageToken;
+                var prevPageToken = data.prevPageToken;
+                //Log Data
+                console.log(data)
+
+                $.each(data.items, function(i, item){
+                    ///GET OUTPUT
+                    var output = getOutput(item);
+
+                    //Display Results
+                    $("#results").append(output);
+                })
+
+                var buttons = getButtons(prevPageToken, nextPageToken)
+
+                ///Display Buttons
+                $("#buttons").append(buttons);
+            }
+    )
+}
+
+
 ////Build OUTPUT
 function getOutput(item){
     var videoId = item.id.videoId;
@@ -81,13 +126,15 @@ function getOutput(item){
 
 function getButtons(prevPageToken, nextPageToken){
     if(!prevPageToken){
-        var btnOutput = '<div class="button-container>"' +
-        '<button id="next-button" class="paging-button" data-token="'+nextPageToken+'" data-query="'q'"' + 
-        'onclick="nextPage();"> Next </button></div>';
-    } else{
-        var btnOutput = '<div class="button-container">' +
-        '<button id="next-button" class="paging-button" data-token="'+nextPageToken+'" data-query="'q'"' + 
+        var btnOutput = '<div class="button-container">' + '<button id="next-button" class="paging-button" data-token="'+nextPageToken+'" data-query="'+q+'"' + 'onclick="nextPage();"> Next </button></div>';
+    } else {
+        var btnOutput = '<div class="button-container">' + 
+        '<button id="prev-button" class="paging-button" data-token="'+prevPageToken+'" data-query="'+q+'"' + 
+        'onclick="prevPage();"> Prev </button>' +
+        '<button id="next-button" class="paging-button" data-token="'+nextPageToken+'" data-query="'+q+'"' + 
         'onclick="nextPage();"> Next </button></div>';
     }
+
+    return btnOutput
 }
 
