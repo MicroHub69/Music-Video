@@ -95,6 +95,52 @@ function nextPage(){
 }
 
 
+// Prev Function
+function prevPage(){
+
+
+    var token = $("prev-button").data('token');
+    var q = $("prev-button").data('query')
+
+
+
+    $("#results").html("")
+    $("#buttons").html("")
+
+    ///GET FORM INPUTS
+    q = $("#query").val();
+
+    ////GET RUN REQUEST ON API
+    $.get(
+        "https://www.googleapis.com/youtube/v3/search",{
+            part: 'snippet, id',
+            q: q,
+            pageToken: token,
+            type: 'video',
+            key: "AIzaSyCWqsbZfTuSO4xxIhlOw0a8RM-s7Da6YIA"},
+            function(data){
+                var nextPageToken = data.nextPageToken;
+                var prevPageToken = data.prevPageToken;
+                //Log Data
+                console.log(data)
+
+                $.each(data.items, function(i, item){
+                    ///GET OUTPUT
+                    var output = getOutput(item);
+
+                    //Display Results
+                    $("#results").append(output);
+                })
+
+                var buttons = getButtons(prevPageToken, nextPageToken)
+
+                ///Display Buttons
+                $("#buttons").append(buttons);
+            }
+    )
+}
+
+
 ////Build OUTPUT
 function getOutput(item){
     var videoId = item.id.videoId;
